@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Module for the BaseModel class that defines
-common attributes/methods for other classes.
+Module for the BaseModel class that defines common attributes/methods for
+other classes.
 """
 
 from datetime import datetime
