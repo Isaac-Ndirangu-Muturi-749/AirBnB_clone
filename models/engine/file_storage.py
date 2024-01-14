@@ -10,6 +10,7 @@ from models.city import City
 from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
+from models.user import User
 
 classes = {
     'BaseModel': BaseModel,
@@ -17,7 +18,8 @@ classes = {
     'City': City,
     'Amenity': Amenity,
     'Place': Place,
-    'Review': Review
+    'Review': Review,
+    'User': User
 }
 
 class FileStorage:
