@@ -51,14 +51,20 @@ class FileStorage:
         """
         return FileStorage.__objects
 
-    def all(self):
+    def all(self, cls=None):
         """
-        Returns the dictionary of all objects.
+        Returns a dictionary of all objects or all objects of a specific class.
+
+        Args:
+            cls (class, optional): Class to filter objects.
 
         Returns:
-            dict: Dictionary containing all objects.
+            dict: Dictionary containing objects.
         """
-        return FileStorage.__objects
+        if cls:
+            return {key: obj for key, obj in self.__objects.items() if isinstance(obj, cls)}
+        return self.__objects
+
 
     def new(self, obj):
         """
