@@ -63,8 +63,8 @@ update City 1111-2222 name="New York"
 
 Follow me on Twitter 🐦, connect with me on LinkedIn 🔗, and check out my GitHub 🐙. You won't be disappointed!
 
-👉 Twitter: https://twitter.com/NdiranguMuturi1
-👉 LinkedIn: https://www.linkedin.com/in/isaac-muturi-3b6b2b237
-👉 GitHub: https://github.com/Isaac-Ndirangu-Muturi-749
+👉 Twitter: https://twitter.com/NdiranguMuturi1  
+👉 LinkedIn: https://www.linkedin.com/in/isaac-muturi-3b6b2b237  
+👉 GitHub: https://github.com/Isaac-Ndirangu-Muturi-749  
 
 So, what are you waiting for? Join me on my tech journey and learn something new today! 🚀🌟
