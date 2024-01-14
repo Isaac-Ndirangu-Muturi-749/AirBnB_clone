@@ -5,7 +5,7 @@ Module for the BaseModel class that defines common attributes/methods for other 
 
 from datetime import datetime
 import uuid
-from models import storage
+# from models import storage
 
 class BaseModel:
     """
