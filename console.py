@@ -25,7 +25,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_create(self, arg):
-        """Creates a new instance of BaseModel and saves it to the JSON file."""
+        """Creates a new instance of BaseModel and saves it to JSON file."""
         if not arg:
             print("** class name missing **")
             return
