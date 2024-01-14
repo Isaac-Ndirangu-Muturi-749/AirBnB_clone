@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """
-Module for the BaseModel class that defines common attributes/methods for other classes.
+Module for the BaseModel class that defines
+common attributes/methods for other classes.
 """
 
 from datetime import datetime
 import uuid
 import models
+
 
 class BaseModel:
     """
@@ -36,11 +38,13 @@ class BaseModel:
         """
         Returns a string representation of the BaseModel instance.
         """
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        class_name = self.__class__.__name__
+        return f"[{class_name}] ({self.id}) {self.__dict__}"
 
     def save(self):
         """
-        Updates the public instance attribute updated_at with the current datetime.
+        Updates the public instance attribute updated_at with the
+         current datetime.
         """
         self.updated_at = datetime.now()
         models.storage.save()

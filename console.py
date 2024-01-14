@@ -19,7 +19,8 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
 
     def do_create(self, arg):
-        """Creates a new instance of BaseModel and saves it to the JSON file."""
+        """Creates a new instance of BaseModel and saves it
+         to the JSON file."""
         if not arg:
             print("** class name missing **")
             return
@@ -33,7 +34,8 @@ class HBNBCommand(cmd.Cmd):
         print(new_instance.id)
 
     def do_show(self, arg):
-        """Prints the string representation of an instance based on the class name and id."""
+        """Prints the string representation of an instance based on
+         the class name and id."""
         args = arg.split()
         if not arg or len(args) == 1:
             print("** class name missing **")
@@ -74,7 +76,8 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
 
     def do_all(self, arg):
-        """Prints all string representations of all instances, or all instances of a class."""
+        """Prints all string representations of all instances,
+         or all instances of a class."""
         args = arg.split()
         if not arg or len(args) == 1:
             instances = models.storage.all().values()
@@ -85,14 +88,17 @@ class HBNBCommand(cmd.Cmd):
             except KeyError:
                 print("** class doesn't exist **")
                 return
-            instances = [str(instance) for key, instance in models.storage.all().items() if key.startswith(args[0])]
+            instances = ([str(instance)
+                          for key, instance in models.storage.all().items()
+                          if key.startswith(args[0])])
             if not instances:
                 print("** class doesn't exist **")
                 return
             print(instances)
 
     def do_update(self, arg):
-        """Updates an instance based on the class name and id by adding or updating attribute."""
+        """Updates an instance based on the class name and id by adding
+         or updating attribute."""
         args = arg.split()
         if not arg or len(args) == 1:
             print("** class name missing **")
@@ -127,6 +133,7 @@ class HBNBCommand(cmd.Cmd):
         """EOF command to exit the program."""
         print()
         return True
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

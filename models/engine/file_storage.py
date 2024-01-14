@@ -22,6 +22,7 @@ classes = {
     'User': User
 }
 
+
 class FileStorage:
     """
     Class to manage serialization and deserialization of instances
