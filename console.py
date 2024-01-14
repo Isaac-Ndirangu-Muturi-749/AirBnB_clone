@@ -16,6 +16,7 @@ from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
+    """ HBNBCommand class that contains entry point of command interpreter """
     prompt = '(hbnb) '
 
     def do_create(self, arg):
