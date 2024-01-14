@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-
+Module: file_storage.py
 """
 
 import json
@@ -21,25 +21,56 @@ classes = {
 }
 
 class FileStorage:
+    """
+    Class to manage serialization and deserialization of instances
+    to and from a JSON file.
+    """
     __file_path = "file.json"
     __objects = {}
 
     @property
     def file_path(self):
+        """
+        Getter for the file path.
+
+        Returns:
+            str: File path.
+        """
         return FileStorage.__file_path
 
     @property
     def objects(self):
+        """
+        Getter for the stored objects.
+
+        Returns:
+            dict: Dictionary containing stored objects.
+        """
         return FileStorage.__objects
 
     def all(self):
+        """
+        Returns the dictionary of all objects.
+
+        Returns:
+            dict: Dictionary containing all objects.
+        """
         return FileStorage.__objects
 
     def new(self, obj):
+        """
+        Adds a new object to the storage.
+
+        Args:
+            obj (BaseModel): Object to be added.
+        """
         key = "{}.{}".format(obj.__class__.__name__, obj.id)
         FileStorage.__objects[key] = obj
 
     def save(self):
+        """
+        Serializes objects to JSON and saves to file.
+        """
         new_dict = {}
         for key, value in FileStorage.__objects.items():
             new_dict[key] = value.to_dict()
@@ -47,6 +78,10 @@ class FileStorage:
             json.dump(new_dict, f)
 
     def reload(self):
+        """
+        Deserializes objects from JSON file and reloads into storage.
+        Ignores FileNotFoundError.
+        """
         try:
             with open(FileStorage.__file_path, mode="r", encoding="utf-8") as f:
                 new_dict = json.load(f)
@@ -56,4 +91,3 @@ class FileStorage:
                 FileStorage.__objects[key] = cls(**value)
         except FileNotFoundError:
             pass
-
